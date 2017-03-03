@@ -15,16 +15,16 @@ namespace sample.Tests
         {
             var schema = GetPersonJsonSchema();
 
-            var person = new Person
-            {
-                Name = "Adam",
-                Age = 12,
-                Address = new Address { AddressLines = new List<AddressLine> { new AddressLine { Line = "Cool Street" } } }
-            };
-
-            var json = JsonConvert.SerializeObject(person);
-
-            var validationError = schema.Validate(json);
+            const string personJson = @"{
+	""Name"": ""Adam"",
+	""Age"": 12,
+	""Address"": {
+		""AddressLines"": [{
+			""Line"": ""Cool Street""
+		}]
+	}
+}";
+            var validationError = schema.Validate(personJson);
 
             Assert.Equal(0, validationError.Count);
         }
