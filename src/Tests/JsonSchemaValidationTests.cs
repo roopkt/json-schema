@@ -4,7 +4,7 @@ using Xunit;
 
 namespace sample.Tests
 {
-    public class JsonSchemaTests
+    public class JsonSchemaValidationTests
     {
         [Fact]
         public void Validate_Person()

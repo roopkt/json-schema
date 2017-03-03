@@ -23,12 +23,9 @@ namespace sample.Tests
         public void I_Can_Generate_Typescript_Person()
         {
            
-            var task = JsonSchema4.FromTypeAsync<Person>();
-            
-            task.Wait();
-            
-            var schema = task.Result;
-         
+            var schema = GetPersonJsonSchema();
+
+
             var generator = new TypeScriptGenerator(schema);
             
             var code = generator.GenerateFile();
@@ -40,8 +37,13 @@ namespace sample.Tests
              Assert.NotNull(type);
         }
 
+       
+
         [Fact]
-        public void I_Can_Validate() {
+        public void I_Can_Validate_P_Against_Schema()
+        {
+            var schema = GetPersonJsonSchema();
+
             var person = new Person
             {
                 Name = "Adam",
@@ -50,9 +52,21 @@ namespace sample.Tests
             };
 
             var json = JsonConvert.SerializeObject(person);
-               
+
+            var validations = schema.Validate(json);
+
+        }
 
 
+
+        private static JsonSchema4 GetPersonJsonSchema()
+        {
+            var task = JsonSchema4.FromTypeAsync<Person>();
+
+            task.Wait();
+
+            var schema = task.Result;
+            return schema;
         }
     }
 }

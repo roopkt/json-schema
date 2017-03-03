@@ -75,9 +75,10 @@
     <Compile Include="src\Models\Address.cs" />
     <Compile Include="src\Models\AddressLine.cs" />
     <Compile Include="src\Tests\GenerateJsonSchemaTests.cs" />
-    <Compile Include="src\Tests\JsonSchemaTests.cs" />
+    <Compile Include="src\Tests\JsonSchemaValidationTests.cs" />
     <Compile Include="src\Models\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\Tests\JsonSchemaValidationTests2.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
