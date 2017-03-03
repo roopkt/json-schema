@@ -72,8 +72,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GenerateJsonSchemaTests.cs" />
-    <Compile Include="JsonSchemaTests.cs" />
+    <Compile Include="src\Models\Address.cs" />
+    <Compile Include="src\Models\AddressLine.cs" />
+    <Compile Include="src\Tests\GenerateJsonSchemaTests.cs" />
+    <Compile Include="src\Tests\JsonSchemaTests.cs" />
+    <Compile Include="src\Models\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

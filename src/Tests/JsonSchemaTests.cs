@@ -1,17 +1,15 @@
-﻿
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Schema;
 using Xunit;
 
-
-namespace sample
+namespace sample.Tests
 {
     public class JsonSchemaTests
     {
         [Fact]
         public void Validate_Person()
         {
-            JsonSchema schema = JsonSchema.Parse(
+            var schema = JsonSchema.Parse(
                 @"{
     'type': 'object',
     'properties': {
@@ -27,7 +25,7 @@ namespace sample
         [Fact]
         public void Validate_Bad_Person()
         {
-            JsonSchema schema = JsonSchema.Parse(
+            var schema = JsonSchema.Parse(
                 @"{
     'type': 'object',
     'properties': {
@@ -43,7 +41,7 @@ namespace sample
         [Fact]
         public void Validate_Bad_Person_Property_Type()
         {
-            JsonSchema schema = JsonSchema.Parse(
+            var schema = JsonSchema.Parse(
                 @"{
     'type': 'object',
     'properties': {
