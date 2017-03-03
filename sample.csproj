@@ -39,8 +39,21 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json.Schema">
-      <HintPath>packages\Newtonsoft.Json.Schema.2.0.8\lib\net45\Newtonsoft.Json.Schema.dll</HintPath>
+    <Reference Include="NJsonSchema, Version=8.8.6270.12833, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102, processorArchitecture=MSIL">
+      <HintPath>packages\NJsonSchema.8.8.6270.12833\lib\net45\NJsonSchema.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NJsonSchema.CodeGeneration, Version=8.8.6270.12850, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102, processorArchitecture=MSIL">
+      <HintPath>packages\NJsonSchema.CodeGeneration.8.8.6270.12850\lib\portable45-net45+win8+wp8+wpa81\NJsonSchema.CodeGeneration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NJsonSchema.CodeGeneration.CSharp, Version=8.8.6270.12850, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102, processorArchitecture=MSIL">
+      <HintPath>packages\NJsonSchema.CodeGeneration.CSharp.8.8.6270.12850\lib\portable45-net45+win8+wp8+wpa81\NJsonSchema.CodeGeneration.CSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NJsonSchema.CodeGeneration.TypeScript, Version=8.8.6270.12850, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102, processorArchitecture=MSIL">
+      <HintPath>packages\NJsonSchema.CodeGeneration.TypeScript.8.8.6270.12850\lib\portable45-net45+win8+wp8+wpa81\NJsonSchema.CodeGeneration.TypeScript.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
@@ -59,7 +72,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GenerateJsonSchema.cs" />
+    <Compile Include="GenerateJsonSchemaTests.cs" />
     <Compile Include="JsonSchemaTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
