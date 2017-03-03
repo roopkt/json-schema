@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace sample
+namespace sample.Models
 {
     public class Address
     {

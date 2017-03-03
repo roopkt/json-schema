@@ -1,4 +1,4 @@
-namespace sample
+namespace sample.Models
 {
     public class Person
     {

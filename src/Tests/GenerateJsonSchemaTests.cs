@@ -1,7 +1,8 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Newtonsoft.Json;
+using NJsonSchema;
 using NJsonSchema.CodeGeneration.TypeScript;
-using NJsonSchema.Generation;
+using sample.Models;
 using Xunit;
 
 namespace sample.Tests
@@ -12,7 +13,7 @@ namespace sample.Tests
         public void I_Can_Generate__Json_Schema
             ()
         {
-            var task = NJsonSchema.JsonSchema4.FromTypeAsync<Person>();
+            var task = JsonSchema4.FromTypeAsync<Person>();
             task.Wait();
             var json = task.Result.ToJson();
             Assert.NotNull(json);
@@ -21,17 +22,8 @@ namespace sample.Tests
         [Fact]
         public void I_Can_Generate_Typescript_Person()
         {
-            //var person = new Person
-            //{
-            //    Name = "Adam",
-            //    Age = 12,
-            //    Address = new Address {AddressLines = new List<AddressLine> {new AddressLine {Line = "Cool Street"}}}
-            //};
-
-            //var json = JsonConvert.SerializeObject(person);
-
-
-            var task = NJsonSchema.JsonSchema4.FromTypeAsync<Person>();
+           
+            var task = JsonSchema4.FromTypeAsync<Person>();
             
             task.Wait();
             
@@ -46,6 +38,21 @@ namespace sample.Tests
             var type = generator.GenerateType("person");
 
              Assert.NotNull(type);
+        }
+
+        [Fact]
+        public void I_Can_Validate() {
+            var person = new Person
+            {
+                Name = "Adam",
+                Age = 12,
+                Address = new Address { AddressLines = new List<AddressLine> { new AddressLine { Line = "Cool Street" } } }
+            };
+
+            var json = JsonConvert.SerializeObject(person);
+               
+
+
         }
     }
 }
